@@ -1,6 +1,6 @@
 <?php
 
-	$hostname = "localhost";	//ou localhost
+	$hostname = "localhost";	//ou localhosta
 	$base= "stage";
 	$loginBD= "root";	//ou "root"
 	$passBD="";
