@@ -52,6 +52,8 @@ CREATE TABLE IF NOT EXISTS `message` (
   
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+TODO Voir si il faut pas id user en FK aussi !
+
 -- --------------------------------------------------------
 
 --

@@ -1,7 +1,7 @@
 <?php
 
 	$hostname = "localhost";	//ou localhosta
-	$base= "stage";
+	$base= "f4speak";
 	$loginBD= "root";	//ou "root"
 	$passBD="";
 try {

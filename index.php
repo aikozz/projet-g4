@@ -1,17 +1,19 @@
 <?php 
 session_start();
 
-if(!isset($_REQUEST['uc']))
-	$uc = 'connexion';
-else
-	$uc = $_REQUEST['uc'];
+if (isset($_GET['controle']) & isset($_GET['action'])) {
+	$controle = $_GET['controle'];
+   $action= $_GET['action'];
+   }
+else { //absence de paramètres : prévoir des valeurs par défaut
+   $controle = "c_connexion";
+   $action= "ident";
+   }
+   
+//inclure le fichier php de contrôle 
+//et lancer la fonction-action issue de ce fichier.	
 
-switch($uc){
-	case 'connexion':
-		{
-			include("vues/v_connexion.php");
-			break;
-		}
-}
+   require ('./controle/' . $controle . '.php');   
+   $action (); 
 
 ?>
