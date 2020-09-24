@@ -1,0 +1,18 @@
+body{
+    font-family: Roboto;
+    font-weight: 400;
+}
+.container-fluid{
+    border-color: #6a5650;
+    border-radius: 25px;
+    border-style: solid;
+    background-color: #cbcbcb;
+}
+.btn{
+    background-color: #6a5650;
+    color: white;
+    margin-bottom: 10px;
+}
+label[for=username]{
+    margin-top: 10px;
+}
