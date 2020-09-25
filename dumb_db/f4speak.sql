@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.9.5deb2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le : mar. 22 sep. 2020 à 13:23
--- Version du serveur :  5.7.31
--- Version de PHP : 7.3.21
+-- Host: localhost:3306
+-- Generation Time: Sep 25, 2020 at 03:12 PM
+-- Server version: 8.0.21-0ubuntu0.20.04.4
+-- PHP Version: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,69 +19,112 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `projetg4`
+-- Database: `f4speak`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `admin`
+-- Table structure for table `message`
 --
 
-DROP TABLE IF EXISTS `admin`;
-CREATE TABLE IF NOT EXISTS `admin` (
-  `id_admin` int(11) NOT NULL AUTO_INCREMENT,
-  `pseudo` text NOT NULL,
-  `mdp` text NOT NULL,
-  `upvote` int(11) NOT NULL,
-  PRIMARY KEY (`id_admin`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `message` (
+  `id_mess` int NOT NULL,
+  `contenu` int NOT NULL,
+  `id_user` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `message`
+-- Table structure for table `topic`
 --
 
-DROP TABLE IF EXISTS `message`;
-CREATE TABLE IF NOT EXISTS `message` (
-  `id_mess` int(11) NOT NULL AUTO_INCREMENT,
-  `id_part` int(11) NOT NULL,
-  `contenu` text NOT NULL,
-  PRIMARY KEY (`id_mess`),
-  CONSTRAINT FK_PersonOrder FOREIGN KEY (id_part) REFERENCES parties(id_part)
-  
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-TODO Voir si il faut pas id user en FK aussi !
+CREATE TABLE `topic` (
+  `id_topic` int NOT NULL,
+  `id_cat` int NOT NULL,
+  `titre` text COLLATE utf8_bin NOT NULL,
+  `id_mess` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `parties`
+-- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `parties`;
-CREATE TABLE IF NOT EXISTS `parties` (
-  `id_part` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` text NOT NULL,
-  PRIMARY KEY (`id_part`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
+CREATE TABLE `user` (
+  `id_user` int NOT NULL,
+  `nom` varchar(40) COLLATE utf8_bin NOT NULL,
+  `prenom` varchar(40) COLLATE utf8_bin NOT NULL,
+  `email` varchar(40) COLLATE utf8_bin NOT NULL,
+  `pseudo` varchar(40) COLLATE utf8_bin NOT NULL,
+  `mdp` varchar(255) COLLATE utf8_bin NOT NULL,
+  `nb_vote` int NOT NULL,
+  `admin` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Structure de la table `user`
+-- Indexes for dumped tables
 --
 
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE IF NOT EXISTS `user` (
-  `id_user` int(11) NOT NULL AUTO_INCREMENT,
-  `pseudo` text NOT NULL,
-  `mdp` text NOT NULL,
-  `upvote` int(11) NOT NULL,
-  PRIMARY KEY (`id_user`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+--
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`id_mess`),
+  ADD KEY `mess_user` (`id_user`);
+
+--
+-- Indexes for table `topic`
+--
+ALTER TABLE `topic`
+  ADD PRIMARY KEY (`id_topic`),
+  ADD KEY `topic_mess` (`id_mess`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `id_mess` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `topic`
+--
+ALTER TABLE `topic`
+  MODIFY `id_topic` int NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `message`
+--
+ALTER TABLE `message`
+  ADD CONSTRAINT `message_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `topic`
+--
+ALTER TABLE `topic`
+  ADD CONSTRAINT `topic_ibfk_1` FOREIGN KEY (`id_mess`) REFERENCES `message` (`id_mess`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
