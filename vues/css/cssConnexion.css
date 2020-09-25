@@ -1,18 +1,26 @@
-body{
-    font-family: Roboto;
-    font-weight: 400;
+body,
+html {
+    height: 100%;
+    background-image: url("./../img/BGG4\(flou\).png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(4px);
 }
-.container-fluid{
+.container {
     border-color: #6a5650;
     border-radius: 25px;
     border-style: solid;
     background-color: #cbcbcb;
+
 }
-.btn{
+
+.btn {
     background-color: #6a5650;
     color: white;
     margin-bottom: 10px;
 }
-label[for=username]{
+
+label[for=username] {
     margin-top: 10px;
 }
