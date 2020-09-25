@@ -1,19 +1,30 @@
-.logo{
+.logo {
     height: 10%;
     width: 20%;
-  
+
     margin-left: 40%;
-    
-   
+
+
 }
-.fondhaut{
+
+.fondhaut {
     background-color: #6A5536;
 }
 
-.navv{
+.navv {
     background-color: #cbcbcb;
 }
 
-.prof{
-    float:right;
+.prof {
+    float: right;
 }
+
+.rec {
+    background-color: black;
+    color: white;
+}
+
+.nw {
+    color: black;
+}
+

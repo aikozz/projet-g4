@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,48 +12,39 @@
     <link rel="stylesheet" type="text/css" href="css/head.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container-fluid fondhaut">
         <img src="img/G4.png" class=" col-12 logo">
     </div>
-  
-              
-              
-   <ul class=" list-inline navv">
-
-            
-          
-                <li class="list-inline-item ">
-                    <a class="nav-link" href="#"> Accueil </a> 
+    <nav>
+    <ul class=" list-inline navv">
+        <li class="list-inline-item space pl-5 pr-5">
+            <a class="nav-link nw pl-5" href="#"> Accueil </a>
+        </li>
+        <li class="list-inline-item space pl-5 pr-5">
+            <a class="nav-link nw" href="#"> classement </a>
+        </li>
+        <form class="navbar-form list-inline-item    float-right">
+            <div class="form-group">
+                <li class="list-inline-item pl-5  ">
+                    <input type="text" class="form-control" placeholder="Rechercher">
                 </li>
-                <li class="list-inline-item ">
-                    <a class="nav-link" href="#"> Accueil </a> 
+                <li class="list-inline-item pr-5 ">
+                    <button type="submit" class="btn btn-sm btn-default nav-link rec ">rechercher</button>
                 </li>
-                
-                <form class="navbar-form ">
-                
-                    <div class="form-group">
-                    <li class="list-inline-item float-right">
+            </div>
+        </form>
+        <li class="list-inline-item float-right dropdown ">
+            <a data-toggle="dropdown" href="#"><img src="img/prof.png" height="40px" class="nav-link " class=""> </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">profil</a>
+                <a class="dropdown-item" href="#">deconnexion</a>
+            </div>
+        </li>
+    </ul>
+    </nav>
 
-                   
-<button type="submit" class="btn btn-sm btn-default">OK</button>
- </li><li class="list-inline-item float-right">
-<input type="text" class="form-control" placeholder="Rechercher">
-
-</div>
-
-</form>
-                </li>
-                <li class="list-inline-item float-right ">
-                    <a class="nav-link" href="#"> Accueil </a> 
-                </li>
-              
-                </ul>
-                
-                     
-              
-      
-            
-      
 </body>
+
 </html>
