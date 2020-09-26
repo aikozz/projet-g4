@@ -31,7 +31,22 @@ require("./vues/v_entete.php");
 
 <?php
 foreach($tab as $data){
-    echo '<tr><td>'.$i.'</td> <td>'.$data['pseudo'].'</td><td>'.$data['nb_vote'].'</td><tr/>';
+    if($i==1){
+        echo '<tr class="premier"><td>'.$i.'</td> <td>'.$data['pseudo'].'</td><td>'.$data['nb_vote'].'</td><tr/>';
+
+    }else if($i==2){
+        echo '<tr class="deuxieme"><td>'.$i.'</td> <td>'.$data['pseudo'].'</td><td>'.$data['nb_vote'].'</td><tr/>';
+
+    }else if($i==3){
+        echo '<tr class="troisieme"><td>'.$i.'</td> <td>'.$data['pseudo'].'</td><td>'.$data['nb_vote'].'</td><tr/>';
+
+    }else if($i%2==1){
+        echo '<tr class="bin"><td>'.$i.'</td> <td>'.$data['pseudo'].'</td><td>'.$data['nb_vote'].'</td><tr/>';
+
+    }else{
+        echo '<tr class="ter"><td>'.$i.'</td> <td>'.$data['pseudo'].'</td><td>'.$data['nb_vote'].'</td><tr/>';
+
+    }
   
     $i +=1;
 }
