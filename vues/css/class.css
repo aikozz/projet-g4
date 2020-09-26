@@ -1,8 +1,28 @@
 td{
     border:2px black solid;
+    
 }
 
 table{
     margin:auto;
     text-align:center;
+}
+
+.ter{
+    background-color: cadetblue;
+}
+
+.bin{
+    background-color: rgb(148, 100, 142);
+}
+
+.premier{
+    background-color: gold;
+}
+
+.deuxieme{
+    background-color: silver;
+}
+.troisieme{
+    background-color: brown;
 }
