@@ -36,7 +36,7 @@
             </div>
         </form>
         <li class="list-inline-item float-right dropdown ">
-            <a data-toggle="dropdown" href="#"><img src="IMG/prof.png" height="40px" class="nav-link " class=""> </a>
+            <a data-toggle="dropdown" href="#"><img src="./vues/img/prof.png" height="40px" class="nav-link " class=""> </a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Profil</a>
                 <a class="dropdown-item" href="#">Déconnexion</a>
