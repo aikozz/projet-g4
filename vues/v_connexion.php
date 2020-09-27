@@ -28,14 +28,14 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade show active" id="p1">
-                <form>
+                <form method="post" action="index.php?controle=c_connexion&action=check">
                     <div class="form-group">
                         <label for="username">Identifiant : </label>
-                        <input type="text" class="form-control" placeholder="Entrez votre pseudo..." name="id" required>
+                        <input type="text" name="login" class="form-control" placeholder="Entrez votre pseudo..." name="id" required>
                     </div>
                     <div class="form-group">
                         <label for="mdp">Mot de passe : </label>
-                        <input type="password" class="form-control" placeholder="Entrez votre mot de passe..."
+                        <input type="password" name="pass" class="form-control" placeholder="Entrez votre mot de passe..."
                             name="mdp" required>
                     </div>
                     <input type="submit" class="btn" name="connection" value="Se connecter">

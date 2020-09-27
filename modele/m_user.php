@@ -20,6 +20,10 @@ function getUpvote(){
     return $tabPseudo;
 }
 
+function checkIdent($login,$pass,&$profil){
+    require("./modele/m_connect.php");
+
+}
 
 
 ?>
