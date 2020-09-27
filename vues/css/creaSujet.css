@@ -1,0 +1,29 @@
+html{
+    min-height:100vh;
+    position:relative;
+    padding-bottom:72px;
+}
+
+.pad{
+    margin-top: 10px;
+    margin-left: 1420px; 
+}
+
+.dng{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.Msg{
+    padding-left:20%; 
+}
+
+.saisie{
+    padding-left:20%;
+    padding-right:20%;
+}
+
+.saisieTitre{
+    padding-left:20%;
+    padding-right:60%;
+}
