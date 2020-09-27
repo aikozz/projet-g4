@@ -29,5 +29,9 @@
         ?>
 
     </table>
+    <?php
+    require("./vues/v_pied.php");
+    ?>
+
 </body>
 </html>

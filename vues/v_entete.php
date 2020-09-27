@@ -9,28 +9,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" type="text/css" href="CSS/head.css">
+    <link rel="stylesheet" type="text/css" href="./vues/css/head.css">
    
 </head>
 
 <body>
     <div class="container-fluid fondhaut">
-        <img src="IMG/G4.png" class=" col-12 logo">
+        <img src="./vues/img/G4.png" class=" col-12 logo">
     </div>
     <nav>
     <ul class=" list-inline navv">
         <li class="list-inline-item space pl-5 pr-5">
-<<<<<<< HEAD
             <a class="nav-link nw pl-5" href="index.php"> Accueil </a>
         </li>
         <li class="list-inline-item space pl-5 pr-5">
-            <a class="nav-link nw" href="index.php?controle=c_user&action=classement"> classement </a>
-=======
-            <a class="nav-link nw pl-5" href="./v_accueil.php"> Accueil </a>
-        </li>
-        <li class="list-inline-item space pl-5 pr-5">
-            <a class="nav-link nw" href="../index.php?controle=user&action=classement"> Classement </a>
->>>>>>> 256156bffb2a2af84414e05ed2f45c410b7be40b
+            <a class="nav-link nw" href="index.php?controle=user&action=classement"> Classement </a>
         </li>
         <form class="navbar-form list-inline-item    float-right" method="post" action="index.php?controle=c_topic&action=searchBar">
             <div class="form-group">
