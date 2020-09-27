@@ -6,8 +6,8 @@ if (isset($_GET['controle']) & isset($_GET['action'])) {
    $action= $_GET['action'];
    }
 else { //absence de paramètres : prévoir des valeurs par défaut
-   $controle = "c_connexion";
-   $action= "ident";
+   $controle = "c_user";
+   $action= "acc";
    }
    
 //inclure le fichier php de contrôle 

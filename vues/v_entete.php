@@ -20,15 +20,15 @@
     <nav>
     <ul class=" list-inline navv">
         <li class="list-inline-item space pl-5 pr-5">
-            <a class="nav-link nw pl-5" href="#"> Accueil </a>
+            <a class="nav-link nw pl-5" href="index.php"> Accueil </a>
         </li>
         <li class="list-inline-item space pl-5 pr-5">
-            <a class="nav-link nw" href="index.php?controle=user&action=classement"> classement </a>
+            <a class="nav-link nw" href="index.php?controle=c_user&action=classement"> classement </a>
         </li>
-        <form class="navbar-form list-inline-item    float-right">
+        <form class="navbar-form list-inline-item    float-right" method="post" action="index.php?controle=c_topic&action=searchBar">
             <div class="form-group">
                 <li class="list-inline-item pl-5  ">
-                    <input type="text" class="form-control" placeholder="Rechercher">
+                    <input name="idTop" type="text" class="form-control" placeholder="Rechercher">
                 </li>
                 <li class="list-inline-item pr-5 ">
                     <button type="submit" class="btn btn-sm btn-default nav-link rec ">rechercher</button>

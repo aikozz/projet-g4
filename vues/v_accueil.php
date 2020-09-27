@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php 
-    require("v_entete.php"); 
+    require("./vues/v_entete.php"); 
     ?>
 <div>
         <table class="">
@@ -98,5 +98,5 @@
     </div>
    
 </body> 
-<footer><?php require("v_pied.php") ?></footer>
+<footer><?php require("./vues/v_pied.php") ?></footer>
 </html>
