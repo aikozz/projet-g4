@@ -2,8 +2,8 @@
 
 	$hostname = "localhost";	//ou localhosta
 	$base= "f4speak";
-	$loginBD= "root";	//ou "root"
-	$passBD="";
+	$loginBD= "pmauser";	//ou "root"
+	$passBD="root";
 try {
 
 	$pdo = new PDO ("mysql:server=$hostname; dbname=$base", "$loginBD", "$passBD");
