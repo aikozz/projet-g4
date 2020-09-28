@@ -28,7 +28,9 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade show active" id="p1">
-                <form method="post" action="index.php?controle=c_connexion&action=ident">
+                <?php echo '<p class="alert-danger"> '.$msg .'</p>';
+                      echo '<p class="alert-success">'.$creat.'</p>';?>
+                <form method="post" action="index.php?controle=c_user&action=ident">
                     <div class="form-group">
                         <label for="username">Identifiant : </label>
                         <input type="text" name="login" class="form-control" placeholder="Entrez votre pseudo..." name="id" required>
@@ -43,33 +45,34 @@
             </div>
 
             <div class="tab-pane fade" id="p2">
-                <form>
+                
+                <form method="post" action="index.php?controle=c_user&action=signup">
                     <div class="form-group">
                         <label for="nom">Nom : </label>
-                        <input type="text" class="form-control" placeholder="Entrez votre nom..." name="id" required>
+                        <input type="text" class="form-control" placeholder="Entrez votre nom..." name="nom" required>
                     </div>
                     <div class="form-group">
                         <label for="prenom">Prénom : </label>
-                        <input type="text" class="form-control" placeholder="Entrez votre prénom..." name="id" required>
+                        <input type="text" class="form-control" placeholder="Entrez votre prénom..." name="prenom" required>
                     </div>
                     <div class="form-group">
                         <label for="mail">E-mail : </label>
-                        <input type="mail" class="form-control" placeholder="Entrez votre e-mail..." name="id" required>
+                        <input type="mail" class="form-control" placeholder="Entrez votre e-mail..." name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="pseudo">Pseudo : </label>
-                        <input type="text" class="form-control" placeholder="Entrez votre pseudo..." name="id" required>
+                        <input type="text" class="form-control" placeholder="Entrez votre pseudo..." name="pseudo" required>
                     </div>
                     <div class="form-group">
                         <label for="mdp">Mot de passe : </label>
-                        <input type="password" class="form-control" placeholder="Entrez votre mot de passe..." name="id"
+                        <input type="password" class="form-control" placeholder="Entrez votre mot de passe..." name="mdp"
                             required>
                     </div>
-                    <div class="form-group">
+                 <!--   <div class="form-group">
                         <label for="verifMdp">Vérification Mot de passe : </label>
                         <input type="password" class="form-control"
-                            placeholder="Entrez une deuxieme fois votre mot de passe..." name="id" required>
-                    </div>
+                            placeholder="Entrez une deuxieme fois votre mot de passe..."  required>
+                    </div> -->
                     <input type="submit" class="btn" name="inscription" value="S'inscrire">
                 </form>
             </div>

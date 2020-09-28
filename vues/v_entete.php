@@ -18,13 +18,18 @@
         <img src="./vues/img/G4.png" class=" col-12 logo">
     </div>
     <nav>
-    <ul class=" list-inline navv">
+    <ul class=" list-inline navv"> 
+         <li class="list-inline-item space pl-5 pr-5">
+            <?php echo "bienvenu ". $_SESSION['profil']['pseudo']; ?>
+        </li>
         <li class="list-inline-item space pl-5 pr-5">
             <a class="nav-link nw pl-5" href="index.php"> Accueil </a>
         </li>
         <li class="list-inline-item space pl-5 pr-5">
             <a class="nav-link nw" href="index.php?controle=user&action=classement"> Classement </a>
         </li>
+        <?php if($_SESSION['profil']['admin'] ==1) echo '<li class="list-inline-item space pl-5 pr-5"><a class="nav-link nw pl-5" href="index.php"> pannel admin </a>  </li>' ?>
+      
         <form class="navbar-form list-inline-item    float-right" method="post" action="index.php?controle=c_topic&action=searchBar">
             <div class="form-group">
                 <li class="list-inline-item pl-5  ">
@@ -39,7 +44,7 @@
             <a data-toggle="dropdown" href="#"><img src="./vues/img/prof.png" height="40px" class="nav-link " class=""> </a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Profil</a>
-                <a class="dropdown-item" href="#">Déconnexion</a>
+                <a class="dropdown-item" href="index.php?controle=c_user&action=bye">Déconnexion</a>
             </div>
         </li>
     </ul>

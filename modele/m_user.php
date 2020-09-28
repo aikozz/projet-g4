@@ -19,17 +19,57 @@ function getUpvote(){
    
     return $tabPseudo;
 }
+function pseudoExiste($pseudo){
+    
+    require("./modele/m_connect.php");
+    $sql= "SELECT * FROM user WHERE pseudo=:pseudo";
+        $cde_user  = $pdo->prepare($sql);
+        $cde_user -> bindValue(":pseudo",$pseudo);
+        $b_Question = $cde_user ->execute();
+      
+        
+        if($b_Question )
+        $res_user = $cde_user->fetchAll(PDO::FETCH_ASSOC);
+        
+        if(isset($res_user))
+            return false;
+        else return true;
+
+}
+
+function mailExiste($email){
+    require("./modele/m_connect.php");
+    $sql= "SELECT * FROM user WHERE email=:email";
+        $cde_user  = $pdo->prepare($sql);
+        $cde_user -> bindValue(":email",$email);
+        $b_Question = $cde_user ->execute();
+      
+        
+        if($b_Question )
+        $res_user = $cde_user->fetchAll(PDO::FETCH_ASSOC);
+        
+        if(isset($res_user))
+            return false;
+        else return true;
+
+        
+
+
+            
+
+}
+
 
 function checkIdent($login,$pass,&$profil){
     require("./modele/m_connect.php");
-    $sql_user="SELECT * FROM user WHERE pseudo=:login AND mdp=:pass";
+    $sql_user="SELECT * FROM user WHERE pseudo=:lo AND mdp=:pass";
     //requete admin(TODO)
     $res_user = array();
     //resultat requete admin(TODO)
 
     try{
         $cde_user = $pdo->prepare($sql_user);
-        $cde_user->bindParam(':login', $login);
+        $cde_user->bindParam(':lo', $login);
         $cde_user->bindParam(':pass', $pass);
         $b_user = $cde_user->execute();
 
@@ -43,14 +83,24 @@ function checkIdent($login,$pass,&$profil){
             $res_user = $cde_user->fetchAll(PDO::FETCH_ASSOC);
             //res tab admin(TODO)
         }
+
     }
     catch (PDOException $e){
         echo utf8_encode("Echec de select : " . $e->getMessage() . "\n");
         die();
     }
+    if(count($res_user) >0){
+        $profil = $res_user[0];
+        return true;
+    }
     $profil = array();
     return false;
 }
+
+function createAcc($nom,$prenom,$email,$pseudo,$mdp){
+
+}
+
 
 
 ?>
