@@ -47,7 +47,7 @@ function mailExiste($email){
         
         if($b_Question )
         $res_user = $cde_user->fetchAll(PDO::FETCH_ASSOC);
-        
+   
         if(isset($res_user))
             return false;
         else return true;
@@ -98,6 +98,25 @@ function checkIdent($login,$pass,&$profil){
 }
 
 function createAcc($nom,$prenom,$email,$pseudo,$mdp){
+	require ("./modele/m_connect.php") ;
+   
+	$bd = $pdo->prepare("INSERT INTO user(nom, prenom, email,pseudo,mdp,nb_vote,administrateur) VALUES(:nom, :prenom, :email,:login_etu,:pass_etu,0,0)");
+  
+
+    $bd-> bindparam(':nom',$nom);
+   
+    $bd-> bindparam(':prenom',$prenom);
+   
+    $bd-> bindparam(':email',$email);
+   
+    $bd-> bindparam(':login_etu',$pseudo);
+   
+    $bd-> bindparam(':pass_etu',$mdp);
+    
+ 
+	$bd->execute();
+    
+
 
 }
 

@@ -28,7 +28,7 @@
         <li class="list-inline-item space pl-5 pr-5">
             <a class="nav-link nw" href="index.php?controle=user&action=classement"> Classement </a>
         </li>
-        <?php if($_SESSION['profil']['admin'] ==1) echo '<li class="list-inline-item space pl-5 pr-5"><a class="nav-link nw pl-5" href="index.php"> pannel admin </a>  </li>' ?>
+        <?php if($_SESSION['profil']['administrateur'] ==1) echo '<li class="list-inline-item space pl-5 pr-5"><a class="nav-link nw pl-5" href="index.php"> pannel admin </a>  </li>' ?>
       
         <form class="navbar-form list-inline-item    float-right" method="post" action="index.php?controle=c_topic&action=searchBar">
             <div class="form-group">

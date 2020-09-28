@@ -52,7 +52,7 @@ function signup(){
     $username = isset($_POST['pseudo'])?($_POST['pseudo']):'';
     $mdp = isset($_POST['mdp'])?($_POST['mdp']):'';
 
-    $erreur ='';
+   
     require("./modele/m_user.php");
 
     if(mailExiste($email)){
@@ -60,13 +60,17 @@ function signup(){
         require("./vues/v_connexion.php");
 
     }
-    if(pseudoExiste($pseudo)){
+    if(pseudoExiste($username)){
         $msg ="pseudo déjà existant";
-      
+        require("./vues/v_connexion.php");
+
 
     }
-    else {
-        createAcc($nom,$prenom,$email,$pseudo,$mdp);
+    else { 
+    
+       createAcc($nom,$prenom,$email,$username,$mdp);
+     
+    
          $creat="compte bien créé";
         require("./vues/v_connexion.php");
        
