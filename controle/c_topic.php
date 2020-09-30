@@ -12,4 +12,13 @@ function searchBar(){
     
 }
 
+function showTop(){
+    $id = $_GET['id'];
+    require("./modele/m_topic.php");
+    $listeTop = listeTop($id);
+    $name=$_GET['nom'];
+    require("./vues/v_topic.php");
+}
+
+
 ?>

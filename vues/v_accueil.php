@@ -22,7 +22,7 @@
                 <td>
                     <div class="part">
                         <u>
-                            <a href="#">ceci est un test</a>
+                            <a href="index.php?controle=c_topic&action=showTop&id=1&nom=Categorie1">ceci est un test</a>
                         </u>
                         <br />
                         <p>ceci est le descriptif de cette partie</p>
