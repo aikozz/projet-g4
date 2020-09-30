@@ -40,6 +40,39 @@ function ident(){
     }
     
 }
+function profil(){
+    require("./modele/m_user.php");
+    require("./vues/v_profil.php");
+}
+function modificationProfil(){
+    $nom = isset($_POST['nom'])?($_POST['nom']):'';
+    $prenom = isset($_POST['prenom'])?($_POST['prenom']):'';
+    $email = isset($_POST['email'])?($_POST['email']):'';
+    $username = isset($_POST['pseudo'])?($_POST['pseudo']):'';
+    $mdp = isset($_POST['mdp'])?($_POST['mdp']):'';
+    $id = $_SESSION['profil']['id_user'];
+
+    require("./modele/m_user.php");
+
+    if(mailExiste($email)){
+        $msg ="mail déjà existant";
+        require("./vues/v_profil.php");
+
+    }
+    if(pseudoExiste($username)){
+        $msg ="pseudo déjà existant";
+        require("./vues/v_profil.php");
+
+    }
+    else { 
+    
+        modifProfil($nom,$prenom,$email,$username,$mdp,$id);
+        $modif="Profil bien modifier";
+        header("Refresh:1; url=index.php?controle=c_user&action=profil");
+        
+     }
+
+}
 function bye(){
     session_destroy();
     connexion();

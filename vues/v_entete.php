@@ -43,7 +43,7 @@
         <li class="list-inline-item float-right dropdown ">
             <a data-toggle="dropdown" href="#"><img src="./vues/img/prof.png" height="40px" class="nav-link " class=""> </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Profil</a>
+                <a class="dropdown-item" href="index.php?controle=c_user&action=profil">Profil</a>
                 <a class="dropdown-item" href="index.php?controle=c_user&action=bye">Déconnexion</a>
             </div>
         </li>

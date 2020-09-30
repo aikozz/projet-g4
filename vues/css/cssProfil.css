@@ -1,0 +1,19 @@
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+html {
+    min-height: 100vh;
+    /* wiewport height */
+    position: relative;
+    padding-bottom: 72px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    /* viewport width */
+}

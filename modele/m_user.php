@@ -96,7 +96,17 @@ function checkIdent($login,$pass,&$profil){
     $profil = array();
     return false;
 }
-
+function modifProfil($nom,$prenom,$email,$username,$mdp,$id){
+    require("./modele/m_connect.php");
+    $sql_modif = $pdo->prepare("UPDATE user SET nom = :nom, prenom = :prenom, email = :email, pseudo = :pseudo, mdp = :mdp WHERE id_user = :id");
+    $sql_modif->bindParam(':nom', $nom);
+    $sql_modif->bindParam(':prenom', $prenom);
+    $sql_modif->bindParam(':email', $email);
+    $sql_modif->bindParam(':pseudo', $username);
+    $sql_modif->bindParam(':mdp', $mdp);
+    $sql_modif->bindParam(':id', $id);
+    $sql_modif->execute();
+}
 function createAcc($nom,$prenom,$email,$pseudo,$mdp){
 	require ("./modele/m_connect.php") ;
    
