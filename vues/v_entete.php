@@ -23,12 +23,12 @@
             <?php echo "bienvenu ". $_SESSION['profil']['pseudo']; ?>
         </li>
         <li class="list-inline-item space pl-5 pr-5">
-            <a class="nav-link nw pl-5" href="index.php"> Accueil </a>
+            <a class="nav-link nw pl-5" href="index.php?controle=c_user&action=acc"> Accueil </a>
         </li>
         <li class="list-inline-item space pl-5 pr-5">
             <a class="nav-link nw" href="index.php?controle=user&action=classement"> Classement </a>
         </li>
-        <?php if($_SESSION['profil']['administrateur'] ==1) echo '<li class="list-inline-item space pl-5 pr-5"><a class="nav-link nw pl-5" href="index.php"> pannel admin </a>  </li>' ?>
+            <?php if($_SESSION['profil']['administrateur'] ==1) echo '<li class="list-inline-item space pl-5 pr-5"><a class="nav-link nw pl-5" href="index.php"> pannel admin </a>  </li>' ?>
       
         <form class="navbar-form list-inline-item    float-right" method="post" action="index.php?controle=c_topic&action=searchBar">
             <div class="form-group">
@@ -43,7 +43,7 @@
         <li class="list-inline-item float-right dropdown ">
             <a data-toggle="dropdown" href="#"><img src="./vues/img/prof.png" height="40px" class="nav-link " class=""> </a>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="index.php?controle=c_user&action=profil">Profil</a>
+                <a class="dropdown-item" href="#">Profil</a>
                 <a class="dropdown-item" href="index.php?controle=c_user&action=bye">Déconnexion</a>
             </div>
         </li>
