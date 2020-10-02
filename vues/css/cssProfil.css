@@ -1,9 +1,3 @@
-table,
-th,
-td {
-    border: 1px solid black;
-}
-
 html {
     min-height: 100vh;
     /* wiewport height */
@@ -16,4 +10,9 @@ footer {
     bottom: 0;
     width: 100vw;
     /* viewport width */
+}
+
+.btn{
+    background-color: #6a5650;
+    color: white;
 }
