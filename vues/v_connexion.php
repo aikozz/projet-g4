@@ -57,7 +57,7 @@
                     </div>
                     <div class="form-group">
                         <label for="mail">E-mail : </label>
-                        <input type="mail" class="form-control" placeholder="Entrez votre e-mail..." name="email" required>
+                        <input type="email" class="form-control" placeholder="Entrez votre e-mail..." name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="pseudo">Pseudo : </label>

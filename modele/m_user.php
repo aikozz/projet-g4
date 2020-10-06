@@ -98,7 +98,14 @@ function checkIdent($login,$pass,&$profil){
 }
 function modifProfil($nom,$prenom,$email,$username,$mdp,$id){
     require("./modele/m_connect.php");
-    $sql_modif = $pdo->prepare("UPDATE user SET nom = :nom, prenom = :prenom, email = :email, pseudo = :pseudo, mdp = :mdp WHERE id_user = :id");
+    $sql_modif = $pdo->prepare("UPDATE user 
+    SET nom = :nom, prenom = :prenom, email = :email, pseudo = :pseudo, mdp = :mdp 
+    WHERE id_user = :id 
+    AND nom IS NOT NULL 
+    AND prenom IS NOT NULL 
+    AND email IS NOT NULL 
+    AND pseudo IS NOT NULL 
+    AND mdp IS NOT NULL");
     $sql_modif->bindParam(':nom', $nom);
     $sql_modif->bindParam(':prenom', $prenom);
     $sql_modif->bindParam(':email', $email);

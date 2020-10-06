@@ -64,11 +64,11 @@ function modificationProfil(){
         require("./vues/v_profil.php");
 
     }
-    else { 
+    else{ 
     
         modifProfil($nom,$prenom,$email,$username,$mdp,$id);
         $modif="Profil bien modifier";
-        header("Refresh:1; url=index.php?controle=c_user&action=profil");
+        require("./vues/v_profil.php");
         
      }
 
