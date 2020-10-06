@@ -14,7 +14,7 @@
         
         foreach($listeTop as $index){
 
-                    echo '<tr><td> <a href="index.php?controle="c_mess"&action="show"&id="'.$index['id_topic'].'">' .$index['titre'] . '</a><td/></tr>';
+                    echo '<tr><td> <a href="index.php?controle=c_mess&action=show&id='.$index['id_topic'].'">' .$index['titre'] . '</a><td/></tr>';
 
         }
         

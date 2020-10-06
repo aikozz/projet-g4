@@ -130,6 +130,20 @@ function createAcc($nom,$prenom,$email,$pseudo,$mdp){
 
 }
 
+function getNameUser($id){
+    require("./modele/m_connect.php");
+    $sql= "SELECT pseudo FROM user WHERE id_user=:id";
+    
+        $cde_Question  = $pdo->prepare($sql);
+        $cde_Question -> bindValue(":id",$id);
+        $cde_Question ->execute();
+      
+            $data= $cde_Question->fetch();
+            $ret = $data[0];
+            return $ret;
+
+}
+
 
 
 ?>

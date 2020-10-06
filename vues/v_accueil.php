@@ -34,7 +34,7 @@
                 <td>
                     <div class="part">
                         <u>
-                            <a href="#">ceci est un deuxieme test</a>
+                            <a href="index.php?controle=c_topic&action=showTop&id=2&nom=Categorie2">ceci est un deuxieme test</a>
                         </u>
 
                         <br />
